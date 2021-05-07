@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
 from graphApp.camera import VideoCamera
+
 # Create your views here.
 
 def index(request) : 
-    return render(request, 'graphApp/index.html' , context = {'text' : 'hello world'})
+    lat ,lon = 32.21821, -7.93565
+    mpbox_access_token = 'pk.eyJ1Ijoic291ZmlhbmVkYWhpbWkiLCJhIjoiY2tucTJxZjh4MGF0eDJucGZqdGd2dnQzZiJ9.gR_gX_q39d2Qp2CUK_soIw'
+    return render(request, 'index.html' , context = {'text' : 'hello world','accessToken': mpbox_access_token , 'lon' : lon, 'lat' :lat})
 
 def stream(request):
     return render(request, 'graphApp/home.html')
