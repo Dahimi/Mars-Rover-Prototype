@@ -38,12 +38,14 @@ class ProcessThread(threading.Thread):
             print(self.ArduinoSerial.readline().decode("ascii"))
             self.isConnected = True
         except serial.SerialException:
-            print('you are not lucky !!')
+            print('you are not lucky  !!')
         for i in range(1000):
-            # print(self.sendToArduino("s"))
+            response = self.sendToArduino("SENSOR")[:-1].strip()
+            print("response", response)
+            response = response.split(" ")
             print('Random generated number', GraphConsumer.sensorData)
-            GraphConsumer.sensorData.temperature = randint(30, 40)
-            GraphConsumer.sensorData.humidity = randint(35, 55)
+            GraphConsumer.sensorData.temperature = float(response[0])
+            GraphConsumer.sensorData.humidity = float(response[1])
             GraphConsumer.numberSec = randint(0, 100)
             time.sleep(0.5)
         GraphConsumer.onProcess = False
