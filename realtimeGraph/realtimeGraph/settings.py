@@ -25,7 +25,7 @@ SECRET_KEY = '0aqkg)dm()+%(fgbpjn_z065x64pa!(w$b4uwl2hk9t+3--rj*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'realtimeGraph.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR.joinpath('frontend/build')],
+        'DIRS': [BASE_DIR.joinpath('frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,8 +84,8 @@ DATABASES = {
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND' : 'channels_redis.core.RedisChannelLayer',
-        'CONFIG' : {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
             'hosts': [('127.0.0.1', 6379)]
         }
     }
@@ -128,6 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[
+STATICFILES_DIRS = [
     BASE_DIR.joinpath('frontend/build/static')
 ]
