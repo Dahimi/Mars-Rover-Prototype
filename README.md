@@ -57,7 +57,7 @@
 <!-- Add banner here -->
 ![Banner](https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/blob/main/banner.jpg)
 
-# SQL and Visualization Projects
+# Mars Rover Prototype
 
 <!-- Add buttons here -->
 
@@ -69,7 +69,7 @@
 
 <!-- Describe your project in brief -->
 
-The project title should be self-explanatory and try not to make it a mouthful. (Although exceptions exist- **awesome-readme-writing-guide-for-open-source-projects** - would have been a cool name)
+This is IoT project where my team and I have implemented ML + Robotics + Engineering + Web Dev technics to build a small Mars Rover prototype. 
 
 # Demo-Preview
 <!-- Add a demo for your project -->
@@ -87,47 +87,50 @@ Here is demo of the final resualts I got in this project
 - [License](#license)
 - [Footer](#footer)
 
-# Installation
+# About the project
 
-*You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
+This is a mechatronic project in which our team of three engineering students developed a scaled-down version of the Mars Rover prototype developed by NASA. During this project, we focused on the following parts : 
+- **Mechanical Analysis** 
+- **Electrical Study, IoT and Sensors**
+- **Graphical Interface ( Web App)** 
 
-The first one should be how to install(how to generally use your project or set-up for editing in their machine).
+Let's look into each part of the project!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This should give the users a concrete idea with instructions on how they can use your project repo with all the steps.
+# Mechanical Analysis
+1. Kinetic analysis
+  The Mars-Rover can have three possible movements: Forward/Backward, Turn, Rotation. The goal of this kinetic study is to examine each type movement, so that we know the instructions necessary to pilot the movement of the robot.
+3. CAD 3D model using SolidWorks
+  The mechanical design of our robot is completed by a global model of the prototype proposed which allows us to study the different connections between the sub-assemblies as well as the technical solutions used for the latter.
+  
+Below are the different views of the global 3D model which was built using **SolidWorks**
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img1.jpg)
 
-Following this steps, **they should be able to run this in their device.**
-
-A method I use is after completing the README, I go through the instructions from scratch and check if it is working.
-
-Here is a sample instruction:
-
-To use this project, first clone the repo on your device using the command below:
-
-```git init```
-
-```git clone https://github.com/Dahimi/nsfw-filter.git```
+5. Material Resistance and Motion Simulation
+  When designing a SolidWorks model, it is wise to study in addition to the movement, the forces applied to the robot as well as their impact on the various sub-assemblies.
+  This part, devoted to the study of resistance of the main blocks of the Rover: Rocker, Bogie and Fork, to predict the possible deformations due to the applied forces, etc.
+  An example of the Bogie block deformation study is shown below.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-# Usage
+
+# Electrical Study, IoT and Sensors
+
+A global electrical diagram of the Mars Rover as proposed below will make it possible to respect the different links and commands between dynamic components, sensors, and microcontrollers.
 
 
-This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-# Contribute
+# Graphical Interface ( Web App)
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+We opted to create a graphical interface based on a web page offering several features. This GUI can be hosted on
+- The Raspberry card
+- An ordinary PC, in this case a Radio module is used
+It is composed of a Server side programmed in Python using the DJANGO Framework and a Client side programmed using HTML, CSS and JavaScript. The interface offers several interesting features such as:
+1. Instant display of information from sensors: Curves and Gauges
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Robot Control + Live Stream (Real-time Camera) + Face Detection
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -165,10 +168,7 @@ If you found this project helpful, feel free to leave a star in GitHub, and shar
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Here is a list of some of the resources I found helpful and would like to give credit to.
-
-* [Othneil Drew's awesome readme](https://github.com/othneildrew)
-* [Navendu Pottekkat's awesome readme](https://github.com/navendu-pottekkat)
+Of course, the success of this project wouldn't have been possible without the contribution of all team members.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
