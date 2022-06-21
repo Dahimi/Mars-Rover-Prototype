@@ -1,86 +1,93 @@
-<!-- Add banner here -->
-![Banner](https://github.com/navendu-pottekkat/awesome-readme/blob/master/header.png)
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-# Project Title
+
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Dahimi/SQL-and-Data-Visualization-Projects">
+    <img src="p1.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">Hello Everyone ! Welcome to this Project Section !</h3>
+
+  <p align="center">
+    <strong>I'm Soufiane from Morocco. I'm an industrial engineering student and a machine learning and data science enthusiast. I also build web apps both frontend and backend. </strong>
+    <br />
+    <br />
+    Please scroll down to know more about this project
+    <br />
+    <a href="https://github.com/Dahimi/SQL-and-Data-Visualization-Projects"><strong>Explore other projects »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Dahimi/SQL-and-Data-Visualization-Projects">View Demo</a>
+    ·
+    <a href="https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/blob/main/banner.jpg)
+
+# SQL and Visualization Projects
 
 <!-- Add buttons here -->
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/navendu-pottekkat/awesome-readme?include_prereleases)
-![GitHub last commit](https://img.shields.io/github/last-commit/navendu-pottekkat/awesome-readme)
-![GitHub issues](https://img.shields.io/github/issues-raw/navendu-pottekkat/awesome-readme)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/navendu-pottekkat/awesome-readme)
-![GitHub](https://img.shields.io/github/license/navendu-pottekkat/awesome-readme)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Dahimi/awesome-readme?include_prereleases)
+![GitHub last commit](https://img.shields.io/github/last-commit/Dahimi/SQL-and-Data-Visualization-Projects)
+![GitHub issues](https://img.shields.io/github/issues-raw/Dahimi/SQL-and-Data-Visualization-Projects)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Dahimi/SQL-and-Data-Visualization-Projects)
+![GitHub](https://img.shields.io/github/license/Dahimi/SQL-and-Data-Visualization-Projects)
 
 <!-- Describe your project in brief -->
 
 The project title should be self-explanatory and try not to make it a mouthful. (Although exceptions exist- **awesome-readme-writing-guide-for-open-source-projects** - would have been a cool name)
 
-Add a cover/banner image for your README. **Why?** Because it easily **grabs people's attention** and it **looks cool**(*duh!obviously!*).
-
-Wait, I forgot something. You can use this README as a template from [this link](README-template.md).
-
-The best dimensions for the banner is **1280x650px**. You could also use this for social preview of your repo.
-
-I personally use [**Canva**](https://www.canva.com/) for creating the banner images. All the basic stuff is **free**(*you won't need the pro version in most cases*).
-
-*What are all those flashy thingies below the title?*
-
-Looks nice doesn't it? Those are called badges and they do improve the readability by giving some quick insights right?
-
-There are endless badges that you could use in your projects. And they do depend on the project. Some of the ones that I commonly use in every projects are given below. 
-
-I use [**Shields IO**](https://shields.io/) for making badges. It is a simple and easy to use tool that you can use for almost all your badge cravings.
-
-<!-- Add badges with link to Shields IO -->
-
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/navendu-pottekkat/awesome-readme?include_prereleases)
-: This badge shows the version of the current release.
-
-![GitHub last commit](https://img.shields.io/github/last-commit/navendu-pottekkat/awesome-readme)
-: I think it is self-explanatory. This gives people an idea about how the project is being maintained.
-
-![GitHub issues](https://img.shields.io/github/issues-raw/navendu-pottekkat/awesome-readme)
-: This is a dynamic badge from [**Shields IO**](https://shields.io/) that tracks issues in your project and gets updated automatically. It gives the user an idea about the issues and they can just click the badge to view the issues.
-
-![GitHub pull requests](https://img.shields.io/github/issues-pr/navendu-pottekkat/awesome-readme)
-: This is also a dynamic badge that tracks pull requests. This notifies the maintainers of the project when a new pull request comes.
-
-![GitHub All Releases](https://img.shields.io/github/downloads/navendu-pottekkat/awesome-readme/total): If you are not like me and your project gets a lot of downloads(*I envy you*) then you should have a badge that shows the number of downloads! This lets others know how **Awesome** your project is and is worth contributing to.
-
-![GitHub](https://img.shields.io/github/license/navendu-pottekkat/awesome-readme)
-: This shows what kind of open-source license your project uses. This is good idea as it lets people know how they can use your project for themselves.
-
-![Tweet](https://img.shields.io/twitter/url?style=flat-square&logo=twitter&url=https%3A%2F%2Fnavendu.me%2Fnsfw-filter%2Findex.html): This is not essential but it is a cool way to let others know about your project! Clicking this button automatically opens twitter and writes a tweet about your project and link to it. All the user has to do is to click tweet. Isn't that neat?
-
 # Demo-Preview
 <!-- Add a demo for your project -->
-
-After you have written about your project, it is a good idea to have a demo/preview(**video/gif/screenshots** are good options) of your project so that people can know what to expect in your project. You could also add the demo in the previous section with the product description.
-
-Here is a random GIF as a placeholder.
+Here is demo of the final resualts I got in this project 
 
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif)
 
 # Table of contents
-
-After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
-
-Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README.
-
-- [Project Title](#project-title)
+ 
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Development](#development)
 - [Contribute](#contribute)
-    - [Sponsor](#sponsor)
-    - [Adding new features or fixing bugs](#adding-new-features-or-fixing-bugs)
 - [License](#license)
 - [Footer](#footer)
 
 # Installation
-[(Back to top)](#table-of-contents)
 
 *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
 
@@ -98,78 +105,86 @@ To use this project, first clone the repo on your device using the command below
 
 ```git init```
 
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git```
+```git clone https://github.com/Dahimi/nsfw-filter.git```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 # Usage
-[(Back to top)](#table-of-contents)
+
 
 This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-# Development
-[(Back to top)](#table-of-contents)
-
-This is the place where you give instructions to developers on how to modify the code.
-
-You could give **instructions in depth** of **how the code works** and how everything is put together.
-
-You could also give specific instructions to how they can setup their development environment.
-
-Ideally, you should keep the README simple. If you need to add more complex explanations, use a wiki. Check out [this wiki](https://github.com/navendu-pottekkat/nsfw-filter/wiki) for inspiration.
-
+<!-- CONTRIBUTING -->
 # Contribute
-[(Back to top)](#table-of-contents)
 
-This is where you can let people know how they can **contribute** to your project. Some of the ways are given below.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Also this shows how you can add subsections within a section.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-### Sponsor
-[(Back to top)](#table-of-contents)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Your project is gaining traction and it is being used by thousands of people(***with this README there will be even more***). Now it would be a good time to look for people or organisations to sponsor your project. This could be because you are not generating any revenue from your project and you require money for keeping the project alive.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You could add how people can sponsor your project in this section. Add your patreon or GitHub sponsor link here for easy access.
 
-A good idea is to also display the sponsors with their organisation logos or badges to show them your love!(*Someday I will get a sponsor and I can show my love*)
 
-### Adding new features or fixing bugs
-[(Back to top)](#table-of-contents)
-
-This is to give people an idea how they can raise issues or feature requests in your projects. 
-
-You could also give guidelines for submitting and issue or a pull request to your project.
-
-Personally and by standard, you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/ISSUE_TEMPLATE.md) and a [pull request template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/PULL_REQ_TEMPLATE.md)(click for examples) so that when a user opens a new issue they could easily format it as per your project guidelines.
-
-You could also add contact details for people to get in touch with you regarding your project.
-
+<!-- LICENSE -->
 # License
-[(Back to top)](#table-of-contents)
 
-Adding the license to README is a good practice so that people can easily refer to it.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-Make sure you have added a LICENSE file in your project folder. **Shortcut:** Click add new file in your root of your repo in GitHub --> Set file name to LICENSE --> GitHub shows LICENSE templates ---> Choose the one that best suits your project!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-I personally add the name of the license and provide a link to it like below.
 
-[GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
+
+<!-- CONTACT -->
+# Contact
+
+- 📫 How to reach me:
+
+<p align = 'center'>
+<a href='mailto:soufianedahimi01@gmail.com'><img src ='https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white'/></a> 
+<a href = 'https://www.linkedin.com/in/soufiane-dahimi/'><img src ='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'/></a>
+<a href = 'https://github.com/Dahimi'><img src ='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'/></a>
+</p>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 # Footer
-[(Back to top)](#table-of-contents)
 
-Let's also add a footer because I love footers and also you **can** use this to convey important info.
+If you found this project helpful, feel free to leave a star in GitHub, and share thig project.
 
-Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke).
+**Now folks, it was great walking with you through this README! See you later**
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-So that is it... You have completed your training young grasshopper. Now it is time for you to use this ideas for your projects.
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-Don't forget your **README Sensei**(*cool twitter handle idea*) when your project takes off with your **Awesome README**.
+Here is a list of some of the resources I found helpful and would like to give credit to.
 
-Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
+* [Othneil Drew's awesome readme](https://github.com/othneildrew)
+* [Navendu Pottekkat's awesome readme](https://github.com/navendu-pottekkat)
 
-**Now folks, the moment you've all been waiting for! The footer!**
-***[Audible gasp]***
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- Add the footer here -->
 
-![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Dahimi/SQL-and-Data-Visualization-Projects.svg?style=for-the-badge
+[contributors-url]: https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Dahimi/SQL-and-Data-Visualization-Projects.svg?style=for-the-badge
+[forks-url]: https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/network/members
+[stars-shield]: https://img.shields.io/github/stars/Dahimi/SQL-and-Data-Visualization-Projects.svg?style=for-the-badge
+[stars-url]: https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Dahimi/SQL-and-Data-Visualization-Projects.svg?style=for-the-badge
+[issues-url]: https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/issues
+[license-shield]: https://img.shields.io/github/license/Dahimi/SQL-and-Data-Visualization-Projects.svg?style=for-the-badge
+[license-url]: https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/soufiane-dahimi
+[product-screenshot]: images/screenshot.png
