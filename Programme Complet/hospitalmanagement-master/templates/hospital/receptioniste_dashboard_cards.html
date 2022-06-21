@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    .market-update-block {
+      padding: 2em 2em;
+      background: #999;
+    }
+
+    .market-update-block h3 {
+      color: #fff;
+      font-size: 2.5em;
+      font-family: 'Carrois Gothic', sans-serif;
+    }
+
+    .market-update-block h4 {
+      font-size: 1.2em;
+      color: #fff;
+      margin: 0.3em 0em;
+      font-family: 'Carrois Gothic', sans-serif;
+    }
+
+    .market-update-block p {
+      color: #fff;
+      font-size: 0.8em;
+      line-height: 1.8em;
+    }
+
+    .market-update-block.clr-block-1 {
+      background: #ff0000;
+      margin-right: 0.8em;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-block.clr-block-2 {
+      background: #FC8213;
+      margin-right: 0.8em;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-block.clr-block-3 {
+      background: #1355f9;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-block.clr-block-1:hover {
+      background: #3C3C3C;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-block.clr-block-2:hover {
+      background: #3C3C3C;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-block.clr-block-3:hover {
+      background: #3C3C3C;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+    }
+
+    .market-update-right i.fa.fa-user-o {
+      font-size: 3em;
+      color: #68AE00;
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-right i.fa.fa-check-circle-o {
+      font-size: 3em;
+      color: #FC8213;
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-right i.fa.fa-calendar {
+      font-size: 3em;
+      color: #337AB7;
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-left {
+      padding: 0px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="grey-bg container-fluid" style="margin-top: -70px;">
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+          <h4 class="text-uppercase">Minimal Statistics Cards</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-user-follow success font-large-2 float-right"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientNonAffected}}</h3>
+                    <span>Nouveaux Patients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-user-unfollow danger font-large-2 float-right"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientAffected}}</h3>
+                    <span>Patients Prise en charge</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-graph success font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientAll}}</h3>
+                    <span>Total Patients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-pointer danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>5</h3>
+                    <span>Transferer Par Shift</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
+
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{doctorsAll}}</h3>
+                    <span>Total Médecin</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="danger">{{doctorsPresent}}</h3>
+                    <span>Médecin Présents</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-vector warning font-large-2 float-right"></i>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="success">{{infirmiers}}</h3>
+                    <span>Infirmiers</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-user success font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="warning">{{receptionistes}}</h3>
+                    <span>Receptionestes</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-pencil primary font-large-2 float-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+
+  </div>
+</body>
+<!--
+  developed By : sumit kumar
+  facebook : fb.com/sumit.luv
+  youtube : youtube.com/lazycoders
+  -->
+
+</html>

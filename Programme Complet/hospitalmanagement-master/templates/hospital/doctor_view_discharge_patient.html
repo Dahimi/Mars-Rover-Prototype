@@ -1,0 +1,141 @@
+{% extends 'hospital/doctor_base.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+  <style media="screen">
+    button {
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #095484;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    }
+    button:hover {
+    background: #0666a3;
+    }
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<!--
+written By : sumit kumar
+facebook : fb.com/sumit.luv
+-->
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">Les nouveaux patients non affectés à un lit</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr>
+          <th>Nom et prénom</th>
+          <th>Admit Date</th>
+          <th>Symptomes</th>
+          <th>Mobile</th>
+          <th>Addresse</th>
+          <th>Departement</th>
+          <th>Chambre</th>
+          <th>Lit</th>
+        </tr>
+      </thead>
+      {% for p in dischargedpatients %}
+      <tr>
+        <td> {{p.get_name}}</td>
+        <td>{{p.admitDate}}</td>
+        <td>{{p.symptoms}}</td>
+        <td>{{p.mobile}}</td>
+        <td>{{p.address}}</td>
+        <td>{{doctor.department}}</td>
+        <td>
+          <select name="room{{p.id}}" class="selectroom" id = "room{{p.id}}"patient = {{p.id}} onchange="updateRoomComponent(this)">
+          <option value="" selected disabled hidden>Choisir Chambre</option>
+          {% for room, id in rooms %}
+          <option value={{id}}>{{room}}</option>
+          {% endfor %}
+        </select>
+        </td>
+        <td>
+          <select name="lit" class="selectBed" id = "bed{{p.id}}" patient = {{p.id}}>
+          
+        </select>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+  </div>
+  <button type="button"  onclick="save()">Sauvegarder</button>
+</div>
+<script>
+  updateBlockComponent = function(roomselect){
+   
+
+  }
+  updateRoomComponent = function(selectroom){
+    roomId = selectroom.value
+    let url = "http://127.0.0.1:8000/blockComponents";
+    $.post( url,{'roomId':roomId, "selectroomId" : selectroom.id},function(response){
+    let patient = response.selectroomId.replace( /^\D+/g, '');  
+    let selectBedId = "bed" + patient;
+    var selectBed = document.getElementById(selectBedId)
+    $("#"+selectBedId).empty();
+    var defaultBed = document.createElement("option")
+    defaultBed.innerHTML = "Choisir Lit"
+    defaultBed.setAttribute("disabled", "")
+    defaultBed.setAttribute("hidden", "")
+    defaultBed.setAttribute("selected", "")
+    defaultBed.setAttribute("value", "")
+    selectBed.appendChild(defaultBed)
+    let beds = response.beds;
+    for(element of beds){
+      var bedOption = document.createElement("option")
+      bedOption.innerHTML = element[1] ;
+      bedOption.id = "beds" + element[0];
+      bedOption.value = element[0];
+      selectBed.appendChild(bedOption)
+    }
+    //console.log(selectroom.id);
+  });
+  };
+  save = function(){
+    var bedselects = document.getElementsByClassName("selectBed")
+    for (bedselect of bedselects){ 
+      patientId = bedselect.id.replace( /^\D+/g, '');
+      bedId = bedselect.value;
+      if(bedId !=""){
+        let url = "http://127.0.0.1:8000/affectation";
+      $.post( url,{'patientId':patientId, "bedId" : bedId});
+      }
+    }
+    location.href = "http://localhost:8000/doctor-view-discharge-patient"
+  }
+</script>
+<script>
+  var roomselects = document.getElementsByClassName("selectroom")
+  for (selectroom of roomselects){ 
+    updateRoomComponent(selectroom);
+  }
+</script>
+
+{% endblock content %}

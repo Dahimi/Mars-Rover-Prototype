@@ -78,12 +78,25 @@ class GraphConsumer(AsyncWebsocketConsumer):
                 str(message['alpha']) + " " + str(message['vitesse'])
             response = self.sendToArduino(command)[:-1].strip()
             print("after command", response)
+        if event == 'COMMAND':
+            message = message.strip()
+            if message == 'forward':
+                print("got a new ordre ", message)
+                command = "ACTION 0 150"
+                response = self.sendToArduino(command)[:-1].strip()
+                print("after order", response)
+            if message == 'backward':
+                command = "ACTION 0 -150"
+                response = self.sendToArduino(command)[:-1].strip()
+            if message == 'stop':
+                command = "ACTION 0 0"
+                response = self.sendToArduino(command)[:-1].strip()
 
     @staticmethod
     def startProcess():
         try:
             GraphConsumer.ArduinoSerial = serial.Serial(
-                'COM4', '57600', timeout=20)
+                'COM8', '57600', timeout=20)
             time.sleep(2)
             print(GraphConsumer.ArduinoSerial.readline().decode("ascii"))
             GraphConsumer.isConnected = True

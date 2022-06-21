@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seminar Evaluation Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.1.5/html2canvas.min.js" integrity="sha512-oQzeC9gIS3sN3QCshVeDWiRCC2tJbR9lqj1rolUtQkGJJeA+7L54y/DVZf0+T3NDZuLOkbInugg7dVNwvcEGow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+min-height: 100%;
+}
+body, p {
+padding: 0;
+margin: 0;
+font-family: Roboto, Arial, sans-serif;
+font-size: 14px;
+line-height: 24px;
+color: #666;
+}
+legend{
+  font-weight: bold;
+}
+.main-block {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+form {
+width: 100%;
+padding: 20px;
+background: #fff;
+box-shadow: 0 2px 5px #ccc;
+}
+h1 {
+font-weight: 400;
+line-height: 28px;
+}
+hr {
+margin: 20px 0;
+}
+span.required {
+color: red;
+}
+.personal-details, .question-block, .statements-block {
+padding-bottom: 20px;
+}
+.personal-details >div {
+display: flex;
+flex-direction: column;
+}
+input {
+padding: 8px 5px;
+margin-bottom: 10px;
+border-radius: 3px;
+border: 1px solid #ccc;
+outline: none;
+vertical-align: middle;
+}
+input:hover, textarea:hover {
+outline: none;
+border: 1px solid #095484;
+}
+.question, .answer, table, textarea {
+width: 100%;
+}
+.answer input, table input {
+width: auto;
+}
+th, td {
+width: 14%;
+padding: 10px 0;
+border-bottom: 1px solid #ccc;
+text-align: center;
+vertical-align: unset;
+line-height: 18px;
+font-weight: 400;
+word-break: break-all;
+}
+.first-col {
+width: 30%;
+text-align: left;
+}
+small {
+display: block;
+line-height: 18px;
+opacity: 0.5;
+}
+.btn-block {
+text-align: center;
+}
+h1{
+  text-align: center;
+}
+button {
+width: 150px;
+padding: 10px;
+border-radius: 5px;
+border: none;
+background: #095484;
+font-size: 16px;
+color: #fff;
+cursor: pointer;
+}
+button:hover {
+background: #0666a3;
+}
+@media (min-width: 568px) {
+.personal-details >div {
+flex-direction: row;
+align-items: center;
+}
+label {
+width: 95px;
+}
+input {
+width: calc((100% - 130px)/2);
+}
+input.first-name, input.seminar-title {
+margin: 0 5px 10px;
+}
+.question-block {
+display: flex;
+justify-content: space-between;
+}
+.question, .answer {
+width: 50%;
+}
+th, td {
+word-break: keep-all;
+}
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <form action="http://127.0.0.1:8000/updateFiche">
+        <h1 >Fiche de Suivi</h1>
+        <fieldset>
+         <div class="question-block">
+           <div class="answer">
+             <label for="">Numero de la fiche</label>
+             <input type="number" name="ficheId" placeholder="" id="ficheId">
+           </div>
+           <div class="answer">
+             <p>Date:</p>
+             <input type="date" name="dateFiche" id="dateFiche"/>
+           </div>
+           <div class="answer">
+           <p>Heure:</p>
+           <input type="time" name="name" />
+           <i class="fas fa-clock"></i>
+         </div>
+         </div>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <legend>Information Personnelles</legend>
+          <div class="personal-details">
+            <div>
+              <label>Nom et Prénom<span class="">*</span></label>
+              <input  class="first-name" type="text" name="first_name" placeholder="First" id = "first_name" />
+              <input type="text" name="last_name" placeholder="Last" id="last_name" />
+
+            </div>
+            <div class="">
+              <div class="answer">
+                <label for="">CIN (Tuteur)</label>
+                <input type="text" name="cin" placeholder="CIN" id="cin" />
+              </div>
+              <div class="answer">
+                <p>Date de naissance</p>
+                <input type="date" name="name" />
+
+              </div>
+              <div class="answer">
+              <input type="radio" id="female"
+               name="sexe" value="female">
+              <label for="female">Femelle</label>
+              <input type="radio" id="male"
+               name="sexe" value="male">
+              <label for="male">Male</label>
+            </div>
+
+
+            </div>
+            <div >
+              <div class="answer">
+                <label>Poids</label>
+                <input type="number" name="poids" placeholder="" id="poids"  >
+              </div>
+              <div class="answer">
+                <label>Taille</label>
+                <input type="number" name="taille" placeholder="" id="taille" >
+              </div>
+              <div class="answer">
+                <label>Fréquence respiratoire</label>
+                <input type="number" name="frequence" placeholder="" >
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Physiologie</legend>
+          <div class="question-block">
+
+            <p class="question"> Etat de conscience : Overture des yeux</p>
+            <div class="answer">
+              <input type="radio" value="Aucune" id="Aucune" name="conscience_eyes"  />
+              <label for="Aucune" class="radio">Aucune</label>
+              <input type="radio" value="Douleur" id="Douleur" name="conscience_eyes"  />
+              <label for="Douleur" class="radio">Douleur</label>
+              <input type="radio" value="Appel" id="Appel" name="conscience_eyes"  />
+              <label for="Appel" class="radio">Appel</label>
+              <input type="radio" value="Spontanee" id="Spontanee" name="conscience_eyes"  />
+              <label for="Spontanee" class="radio">Spontanee</label>
+            </div>
+            </div>
+          <div class="question-block">
+            <p class="question"> Etat de conscience : Réponse verbale</p>
+            <div class="answer">
+              <input type="radio" value="Aucune" id="Aucune" name="conscience_response"  />
+              <label for="Aucune" class="radio">Aucune</label>
+              <input type="radio" value="Désoriente" id="Désoriente" name="conscience_response"  />
+              <label for="Désoriente" class="radio">Désoriente</label>
+              <input type="radio" value="Orienté" id="Orienté" name="conscience_response"  />
+              <label for="Orienté" class="radio">Orienté</label>
+              <input type="radio" value="Incompressible" id="Incompressible" name="conscience_response"  />
+              <label for="Incompressible" class="radio">Incompressible</label>
+              <input type="radio" value="Inapproprié" id="Inapproprié" name="conscience_response"  />
+              <label for="Inapproprié" class="radio">Inapproprié</label>
+            </div>
+          </div>
+          <div class="question-block">
+            <div class="answer">
+              <label>Fréquence cardiaque</label>
+              <input type="number" name="frequence_cardiaque" placeholder="" >
+              <label>bat/min</label>
+            </div>
+            <div class="answer">
+              <label>Presesion artérielle</label>
+              <input type="number" name="pression_arterielle" placeholder="" >
+              <label>mmHg</label>
+            </div>
+          </div>
+          <div class="question-block">
+            <p class="question">Allergies, accidents médicaux ou accidents chirurgicaux?</p>
+            <div class="answer">
+              <textarea rows="3" ></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <div>
+        <fieldset>
+          <legend>Motif de consultation </legend>
+          <div class="question-block">
+            <p class="question">Motif de la consultation </p>
+            <div class="answer">
+              <div>
+                <input type="checkbox" value="none" id="radioOne" name="assessment" />
+                <label for="radioOne" class="radio">Douleur / Intensité</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioTwo" name="assessment" />
+                <label for="radioTwo" class="radio">Gonflement / Infection</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioThree" name="assessment" />
+                <label for="radioThree" class="radio">Traumatisme</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioFour" name="assessment" />
+                <label for="radioFour" class="radio">Fièvre</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioFive" name="assessment" />
+                <label for="radioFive" class="radio">Diabète</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioFive" name="assessment" />
+                <label for="radioFive" class="radio">Vomissement</label>
+              </div>
+              <div>
+                <input type="checkbox" value="none" id="radioFive" name="assessment" />
+                <label for="radioFive" class="radio">Diarchée</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Prescreption Médicale</legend>
+          <div class="statements-block">
+
+            <div class="question-block">
+              <p class="question">Conduite à tenir (CAT)</p>
+              <div class="answer">
+                <textarea rows="5" ></textarea>
+              </div>
+            </div>
+            <div class="question-block">
+              <p class="question">Avis du médecin (urgence)</p>
+              <div class="answer">
+                <textarea rows="5" ></textarea>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="btn-block">
+          <button type="submit" onclick="saveFiche()">Sauvegarder</button>
+          <button type="button"  onclick="generatePDF()">Télecharger PDF</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script type="text/javascript">
+var date = new Date();
+var currentDate = date.toISOString().substring(0,10);
+document.getElementById('dateFiche').value = currentDate;
+  document.getElementById("ficheId").value = "{{ficheId}}";
+  document.getElementById("first_name").value = "{{first_name}}";
+  document.getElementById("last_name").value = "{{last_name}}";
+  document.getElementById("poids").value = "{{poids}}";
+  generatePDF = function(){
+    window.scrollTo(0, 0);
+    const screenshotTarget = document.form;
+  saveFiche = function(){
+    var ficheId = "{{ficheId}}"
+    
+    let url = "http://127.0.0.1:8000/updateFiche";
+    $.post( url,  { 'ficheId': ficheId , 'poids' :document.getElementById("poids").value})
+  }  
+  html2canvas(screenshotTarget).then((canvas) => {
+      const base64image = canvas.toDataURL("image/png", 1.0);
+      let width = canvas.width;
+      let height = canvas.height;
+      pdf = new jsPDF('l', 'px', [width, height]);
+      pdf.addImage(canvas, 'PNG', 0, 0,width,height);
+      pdf.save("down.pdf");
+      //var link=document.createElement("a");
+      //link.href=base64image //function blocks CORS
+      //link.download = 'screenshot.png';
+      //link.click();
+      });
+  }
+  </script>
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SGH | EMINES</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <style>
+      #cotainer {
+  padding : 10px;
+  margin : 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background-color: gray;
+  margin: auto;
+  text-align: center;
+}
+.block {
+  padding : 10px;
+  margin : 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  border: 1px solid #c2ba3c;
+  background: #f8ffde;
+  text-align: center;
+  height: 100%;
+
+}
+.room {
+  padding : 5px;
+  margin : 5px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr ;
+  grid-gap: 10px;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #f18e8e;
+  background: #ffbfbf;
+  width: 150px;
+  height: 230px;
+}
+.bed{
+
+  padding: 5px;
+  width: 120px;
+  margin: auto;
+
+}
+select {
+  margin-bottom: 10px;
+  margin: 20px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://stackoverflow.com/favicon.ico) 96% / 15% no-repeat #EEE;
+}
+label{
+  font-weight: bold;
+  font-size: 1.3em;
+  margin: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <div id="container">
+      <button type="button" style="margin-left: 10px;" class="btn btn-info" onclick="history.back()">&laquo; Page Précédente</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    let url = "http://127.0.0.1:8000/bloc_occupation";
+    function blockOccupation(blockName){
+     $.post( url,  { 'blockName': blockName , 'id' :3},function(response){
+        [...document.getElementsByClassName("block")].map(n => n && n.remove());
+        let block = document.createElement("div");
+        block.className  = "block";
+        let container = document.getElementById("container");
+        container.appendChild(block);
+        let rooms = response.rooms
+        let beds = response.beds
+        for(index in rooms){
+          let element = rooms[index]
+          let room = document.createElement("div");
+          room.innerHTML = element[1] ;
+          room.id = "room" + element[0];
+          room.className = "room";
+          block.appendChild(room);
+        }
+        for(index in beds){
+          let element = beds[index]
+          let bed = document.createElement("button");
+          let correspondingPatient = document.createElement("div");
+          correspondingPatient.innerHTML = element[3] + "avec id" + element[5]
+          correspondingPatient.id = "patient" + element[5]
+          bed.type = "button";
+          bed.innerHTML = element[2] ;
+          bed.id = "bed"+ element[0];
+          let room = document.getElementById("room"+element[1]);
+          if (element[2] == "occupied"){
+            bed.className = "btn btn-danger btn-lg bed";
+          }
+          else if (element[2] == "free"){
+            bed.className = "btn btn-success btn-lg bed";
+          }
+          console.log(element[5]);
+          bed.onclick = function(){           
+            location.href = "http://localhost:8000/form?id=" + element[5];
+          }
+          room.appendChild(bed);
+          
+        }
+      } );
+    }
+    function updateBlock(){
+        selectedBlock = document.getElementById("blockName").value;
+        blockOccupation(selectedBlock);
+    }
+  </script>
+  <script type="text/javascript">
+      var values = ["Cardiologie", "Dermatologie", "Médecine d'urgence", "Allergologie/Immunologie","Anesthésiologistes","Chirurgie du côlon et du rectum"];
+
+      var select = document.createElement("select");
+      select.name = "blockName";
+      select.id = "blockName"
+
+      for (const val of values)
+      {
+          var option = document.createElement("option");
+          option.value = val;
+          option.text = val;
+          select.appendChild(option);
+      }
+
+      var label = document.createElement("label");
+      label.innerHTML = "Choisir le Bloc: "
+      label.htmlFor = "blockName";
+      document.getElementById("container").appendChild(label).appendChild(select);
+      document.getElementById("blockName").onchange = updateBlock ;
+      blockOccupation(values[0]);
+  </script>
+  <script type="text/javascript">
+
+
+
+
+
+  </script>
+</html>

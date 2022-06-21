@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>SGH | EMINES</title>
+    <style>
+        th, td {
+            text-align: center;
+        }
+        .heading{
+          display: flex;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="grey-bg container-fluid" id="bigcontainer">
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+          <h4 class="text-uppercase">Statistique de l'Hopital</h4>
+        </div>
+        <div class="col-sm"></div><div class="col-sm"></div>
+        <div class="col-sm" style="margin-top: -4.5%; margin-left: 5%; margin-bottom: 3%; display: flex;">
+          <button type="button" style="margin-left: 10px; width: 50%;" class="btn btn-secondary"onclick="history.back()">&laquo; Accueil</button>
+          <button type="button" style="margin-left: 10px; width: 50%;" class="btn btn-secondary" onclick="blockOccupation()">Occupation des blocs &raquo;</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-user-follow success font-large-2 float-right"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientNonAffected}}</h3>
+                    <span>Nouveaux Patients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-user-unfollow danger font-large-2 float-right"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientAffected}}</h3>
+                    <span>Patients Prise en charge</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-graph success font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{patientAll}}</h3>
+                    <span>Total Patients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-pointer danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>5</h3>
+                    <span>Transferer Par Shift</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
+
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>{{doctorsAll}}</h3>
+                    <span>Total Médecin</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="danger">{{doctorsPresent}}</h3>
+                    <span>Médecin Présents</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-vector warning font-large-2 float-right"></i>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="success">{{infirmiersALL}}</h3>
+                    <span>Infirmiers</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-user success font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="warning">{{receptionistesALL}}</h3>
+                    <span>Receptionistes</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-pencil primary font-large-2 float-left"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <br><br>
+<div class="container">
+   
+      <div class="panel-heading" style="text-align:center; ">
+        <h6 class="panel-title" style="font-size: 2em; font-weight: bold; color: #0666a3;">Médecin Présent</h6>
+      </div>
+      <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+            <th>Nom et Prénom</th>
+            <th>Departement</th>
+            <th>Mobile</th>
+            <th >Date_Début_Service</th>
+            <th>Heure_Début_Service</th>
+          </tr>
+        </thead>
+        {% for d in doctors %}
+        <tr>
+          <td> {{d.get_name}}</td>
+          <td>{{d.department}}</td>
+          <td>{{d.mobile}}</td>
+          <td>{{d.date}}</td>
+          <td>{{d.horaire}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+</div>
+    
+  </div>
+  </body>
+  <script>
+     function blockOccupation(){
+      location.href = 'http\://localhost:8000/show_bloc_occupation';
+     }
+     function fullScreen() {
+        var el = document.getElementById("bigcontainer");
+        var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
+
+        if (typeof rfs !== "undefined" && rfs) {
+            rfs.call(el);
+        } else if (typeof window.ActiveXObject !== "undefined") {
+            // for Internet Explorer
+            var wscript = new ActiveXObject("WScript.Shell");
+                wscript.SendKeys("{F11}");
+        }
+    }    
+  </script>
+</html>

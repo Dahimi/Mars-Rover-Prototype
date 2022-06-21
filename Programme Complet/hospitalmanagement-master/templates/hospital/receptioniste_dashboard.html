@@ -1,0 +1,60 @@
+{% extends 'hospital/receptioniste_base.html' %}
+
+{% load static %}
+
+{% block content %}
+{%include 'hospital/receptioniste_dashboard_cards.html'%}
+
+<div class="container">
+   
+      <div class="panel-heading" style="text-align:center; ">
+        <h6 class="panel-title" style="font-size: 2em; font-weight: bold; color: #0666a3;">Médecins Présents</h6>
+      </div>
+      <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+            <th>Nom complet</th>
+            <th>Département</th>
+            <th >Date Début Service</th>
+            <th>Heure Début Service</th>
+          </tr>
+        </thead>
+        {% for d in doctors %}
+        <tr>
+          <td> {{d.get_name}}</td>
+          <td>{{d.department}}</td>
+          <td>{{d.date}}</td>
+          <td>{{d.horaire}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <style>
+        button {
+      width: 150px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #0666a3;
+      }
+      </style>
+      <button type="button" style="background-color: #095484;" class="btn btn-primary btn-lg btn-block" onclick="record()">Enregistrer un Nouveau Patient</button>
+      <script>
+        record = function(){
+          location.href = "http://localhost:8000/registerpatient"
+        }
+      </script>
+</div>
+<!--²
+developed By : sumit kumar
+facebook : fb.com/sumit.luv
+youtube : youtube.com/lazycoders
+-->
+
+{% endblock content %}

@@ -12,8 +12,8 @@ int pinEcho = 12;
 long temps ;
 float vitdynam=80;
 float R;
-float a=30;
-float b=60;
+float a=17.5;
+float b=40;
 float sens;
 float temperature = 30;
 float humidity = 70;
@@ -28,6 +28,7 @@ void setup() {
   pinMode(12, INPUT);
   digitalWrite(11, LOW);
   Serial1.begin(57600);
+  //Serial1.begin(115200);
   myHumidity.begin();
   delay(200);
   Dynamixel.begin(1000000, 2); // Inicialize the servo at 1Mbps and Pin Control 2
@@ -39,7 +40,7 @@ void setup() {
   pinMode(PWML, OUTPUT);
   pinMode(DIRR, OUTPUT);
   pinMode(DIRL, OUTPUT);
-  Serial1.println("communication set");
+  Serial1.println("com");
   
 }
 
