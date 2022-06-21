@@ -69,7 +69,7 @@
 
 <!-- Describe your project in brief -->
 
-This is IoT project where my team and I have implemented ML + Robotics + Engineering + Web Dev technics to build a small Mars Rover prototype. 
+This is an IoT project where my team and I have implemented our Machine Learning + Robotics + Engineering + Web Development skills to build a Mars Rover prototype. 
 
 # Demo-Preview
 <!-- Add a demo for your project -->
@@ -189,7 +189,7 @@ If you found this project helpful, feel free to leave a star in GitHub, and shar
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Of course, the success of this project wouldn't have been possible without the contribution of all team members.
+Of course, the success of this project wouldn't have been possible without the contribution of all my team members. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
