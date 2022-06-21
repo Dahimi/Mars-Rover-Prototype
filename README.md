@@ -55,7 +55,7 @@
 
 
 <!-- Add banner here -->
-![Banner](https://github.com/Dahimi/SQL-and-Data-Visualization-Projects/blob/main/banner.jpg)
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/background.JPG)
 
 # Mars Rover Prototype
 
@@ -81,9 +81,10 @@ Here is demo of the final resualts I got in this project
  
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contribute](#contribute)
+- [About](#About-the-project)
+- [Mechanical Analysis](#mechanical-analysis)
+- [Electrical Study, IoT and Sensors](#Electrical-Study,-IoT-and-Sensors)
+- [Graphical Interface ( Web App)](#Graphical-Interface-(-Web-App))
 - [License](#license)
 - [Footer](#footer)
 
@@ -98,20 +99,34 @@ Let's look into each part of the project!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Mechanical Analysis
-1. Kinetic analysis
+
+1. **Kinetic analysis**
+
   The Mars-Rover can have three possible movements: Forward/Backward, Turn, Rotation. The goal of this kinetic study is to examine each type movement, so that we know the instructions necessary to pilot the movement of the robot.
-3. CAD 3D model using SolidWorks
+  
+2. **CAD 3D model using SolidWorks**
+
   The mechanical design of our robot is completed by a global model of the prototype proposed which allows us to study the different connections between the sub-assemblies as well as the technical solutions used for the latter.
   
-Below are the different views of the global 3D model which was built using **SolidWorks**
-<!-- Add banner here -->
-![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img1.jpg)
+Below are the different views of the global 3D model which was built using **SolidWorks** <br>
+<p align="center"><strong>Perspective View</strong></p>
 
-5. Material Resistance and Motion Simulation
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img1.JPG)
+
+<p align="center"><strong>Right View</strong></p>
+
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img2.JPG)
+
+3. **Material Resistance and Motion Simulation**
+
   When designing a SolidWorks model, it is wise to study in addition to the movement, the forces applied to the robot as well as their impact on the various sub-assemblies.
   This part, devoted to the study of resistance of the main blocks of the Rover: Rocker, Bogie and Fork, to predict the possible deformations due to the applied forces, etc.
-  An example of the Bogie block deformation study is shown below.
+  An example of the Bogie block deformation study is shown below. <br>
 
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img3.JPG)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -120,6 +135,8 @@ Below are the different views of the global 3D model which was built using **Sol
 A global electrical diagram of the Mars Rover as proposed below will make it possible to respect the different links and commands between dynamic components, sensors, and microcontrollers.
 
 
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img4.JPG)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Graphical Interface ( Web App)
@@ -128,10 +145,15 @@ We opted to create a graphical interface based on a web page offering several fe
 - The Raspberry card
 - An ordinary PC, in this case a Radio module is used
 It is composed of a Server side programmed in Python using the DJANGO Framework and a Client side programmed using HTML, CSS and JavaScript. The interface offers several interesting features such as:
-1. Instant display of information from sensors: Curves and Gauges
+1. **Instant display of information from sensors: Curves and Gauges** 
 
-2. Robot Control + Live Stream (Real-time Camera) + Face Detection
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img5.JPG)
 
+2. **Robot Control + Live Stream (Real-time Camera) + Face Detection**
+
+<!-- Add banner here -->
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/img6.JPG)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
