@@ -55,7 +55,7 @@
 
 
 <!-- Add banner here -->
-![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/background.JPG)
+![Banner](https://github.com/Dahimi/Mars-Rover-Prototype/blob/main/background.jpg)
 
 # Mars Rover Prototype
 
@@ -73,18 +73,17 @@ This is IoT project where my team and I have implemented ML + Robotics + Enginee
 
 # Demo-Preview
 <!-- Add a demo for your project -->
-Here is demo of the final resualts I got in this project 
-
+Well, to see a demo for this project, you are welcome to come to my school mechatronic lab 😄😄! 
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif)
 
 # Table of contents
  
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
-- [About](#About-the-project)
+- [About]("#About-the-project")
 - [Mechanical Analysis](#mechanical-analysis)
-- [Electrical Study, IoT and Sensors](#Electrical-Study,-IoT-and-Sensors)
-- [Graphical Interface ( Web App)](#Graphical-Interface-(-Web-App))
+- [Electrical Study, IoT and Sensors]("#Electrical-Study,-IoT-and-Sensors")
+- [Graphical Interface ( Web App)]("#Graphical-Interface-(-Web-App)")
 - [License](#license)
 - [Footer](#footer)
 
